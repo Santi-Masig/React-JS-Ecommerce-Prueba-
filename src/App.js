@@ -1,6 +1,7 @@
 import "./App.scss";
+import Display from "./components/Display/Display";
 
-import Examples from "./components/Examples";
+//import Examples from "./components/Examples";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/navbar/NavBar";
 
@@ -10,9 +11,8 @@ function App() {
     <>
       {/* <Examples /> */}
       <NavBar />
+      <Display />
       <ItemListContainer />
-
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
     </>
   );
 }
