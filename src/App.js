@@ -9,7 +9,6 @@ import NavBar from "./components/navbar/NavBar";
 function App() {
   return (
     <>
-      {/* <Examples /> */}
       <NavBar />
       <Display />
       <ItemListContainer />
