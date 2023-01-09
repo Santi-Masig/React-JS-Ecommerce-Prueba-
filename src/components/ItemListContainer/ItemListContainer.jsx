@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import FlexWrapper from "../flexWrapper/FlexWrapper";
 import Item from "../Item/Item";
 
 function ItemListContainer() {
+  const [toggle, setToggle] = useState(false);
+
+  console.log("Renderizando");
+
+  useEffect(() => {
+    console.log("Obteniendo items de la base de datos");
+  }, [toggle] );
+  
   const productoA = {
     title: "Lenovo IdeaPad 3",
     price: 500,
@@ -45,6 +54,7 @@ function ItemListContainer() {
           img={productoC.img}
         />
       </FlexWrapper>
+    <button onClick={ () => setToggle(!toggle)}>Toggle State</button>
     </>
   );
 }
