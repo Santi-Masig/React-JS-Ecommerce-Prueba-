@@ -1,5 +1,6 @@
 const databaseItems = [
   {
+    id: 1,
     title: "Lenovo IdeaPad 3",
     price: 500,
     detail:
@@ -9,6 +10,7 @@ const databaseItems = [
     img: "https://http2.mlstatic.com/D_NQ_NP_813169-MLA49250964514_032022-O.webp",
   },
   {
+    id: 2,
     title: "Dell Inspiron",
     price: "ARG: " + 149.999,
     detail:
@@ -18,6 +20,7 @@ const databaseItems = [
     img: "https://http2.mlstatic.com/D_NQ_NP_805951-MLA50865156506_072022-O.webp",
   },
   {
+    id: 3,
     title: "Apple MacBook Pro",
     price: 1587,
     detail:
@@ -28,14 +31,11 @@ const databaseItems = [
   },
 ];
 
-
-
-
 function getItems () {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             resolve(databaseItems);
-        }, 1000);
+        }, 2000);
     });
 }
 
