@@ -1,26 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import FlexWrapper from "../flexWrapper/FlexWrapper";
 import Item from "../Item/Item";
-import products from "../data/_products";
+import getItems from "../../services/mockAsyncService";
 
 function ItemListContainer() {
-  const [toggle, setToggle] = useState(false);
+  const [products, setProducts] = useState([]);
 
-  console.log("Renderizando");
-
-  useEffect(() => {
-    console.log("Obteniendo items de la base de datos");
-  }, [toggle]);
-
+  getItems().then( (respuesta)=> {
+    console.log(respuesta);
+    setProducts(respuesta);
+  });
   return (
     <>
       <FlexWrapper>
        {products.map((item) => (
-        <Item title={item.title} price={item.price} detail={item.detail} img={item.img}  />
+        <Item 
+        key={item.title} 
+        title={item.title} 
+        price={item.price} 
+        detail={item.detail} 
+        img={item.img}  
+        />
        ))}
       </FlexWrapper>
-      <button onClick={() => setToggle(!toggle)}>Toggle State</button>
+  
     </>
   );
 }
